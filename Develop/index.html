@@ -9,35 +9,71 @@
 </head>
 <body>
    <h1>Weather DashBoard</h1>
-   <main class="container">
+   <main class="container-md">
      <div class="row">
-      <section class="col-md-4">
-         <h2>Search for a city</h2>
+      <section  id="search-body" class="col-md-4">
+         <h2 id="search">Search for a city</h2>
          <nav class="navbar navbar-light bg-light">
             <form class="form-inline">
                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form>
          </nav>
-         <h2>Test</h2>
+         <h2>
+            <ul id="city-list">
+               
+            </ul>
+         </h2>
       </section>
-      <section>
-            <div class="card bg-light col-mt-8">
+      <section  class="col-lg-8">
+            <div class="card bg-light ">
                <div class="card-body">
-                  <h5 class="card-title city">01/01</h5>
-                  <p class="card-text">01/02</p>
+                  <h5 id="cityName" class="card-title"></h5>
+                  <p class="card-text"></p>
                </div>
             </div>
-            <div class="card col-m-8">
-               <div class="card-body">
-                  <h5>Light card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                     content.</p>
+            <div class="card">
+               <div class="row">
+                    <div class="card-body col-md-3">
+                  <div class="card text-white bg-primary mb-2" style="max-width: 18rem;">
+                     <div class="card-body">
+                        <p id="day-one" class="card-text"></p>
+                     </div>
+                  </div>
+                    </div>
+                    <div class="card-body col-md-3">
+                  <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+                     <div class="card-body">
+                        <p id="day-two" class="card-text"></p>
+                     </div>
+                  </div>
+                     </div>
+                     <div class="card-body col-md-3">
+                  <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+                     <div class="card-body">
+                        <p id="day-three" class="card-text"></p>
+                     </div>
+                  </div>
+                     </div>
+                    <div class="card-body col-md-2">
+                  <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+                     <div class="card-body">
+                        <p id="day-four" class="card-text"></p>
+                     </div>
+                  </div>
+                    </div>
+                    <div class="card-body col-md-2">
+                  <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+                     <div class="card-body">
+                        <p id="day-five" class="card-text"></p>
+                     </div>
+                  </div>
                </div>
             </div>
       </section>
-     </div>
    </main>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
    <script src="script.js"></script>
 </body>
 </html>

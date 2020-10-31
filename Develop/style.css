@@ -1,7 +1,19 @@
 h1 {
-   font-size: 75px;
-   text-align: center;
-   color: whitesmoke;
-   background: black;
-   padding: 20px;
+  font-size: 75px;
+  text-align: center;
+  color: whitesmoke;
+  background: black;
+  padding: 20px;
+}
+li {
+  list-style-type: none;
+  padding: 10px;
+}
+#search {
+  text-align: center;
+}
+.container-md {
+  width: 70%;
+  margin-left: 200px;
+  margin-right: 200px;
 }
