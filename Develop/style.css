@@ -9,11 +9,34 @@ li {
   list-style-type: none;
   padding: 10px;
 }
-#search {
+.form-control {
   text-align: center;
 }
-.container-md {
-  width: 70%;
-  margin-left: 200px;
-  margin-right: 200px;
+.search-body {
+  text-align: center;
+
+}
+.ml-4 {
+  width: 200px;
+}
+#five-days {
+  margin-left: 50px;
+  margin-top: 20px;
+}
+.row2 {
+  text-align: center;
+}
+@media (min-width: 1199.98px) {
+  #main-body {
+    margin-right: 300px;
+  }
+  #search-body {
+   margin-right: 0;
+    padding-right: 15px;
+  }
+  .form-inline {
+    margin-right: 0;
+    padding-right: 0;
+  }
+
 }

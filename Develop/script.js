@@ -21,7 +21,7 @@ fetch(apiWeather)
     .then(function (data) {
       
 
-      $("#cityName").text(moment().format("dddd, MMMM Do"));
+      $("#cityName").text("("+moment().format("dddd, MMMM Do")+")");
       $("#cityName").append(" "+data.city.name); 
       var getIcon = data.list[0].weather[0].icon;
       var icon = "http://openweathermap.org/img/wn/"+getIcon+"@2x.png";
