@@ -2,16 +2,24 @@ var userInput =""
 var userInput = localStorage.getItem("Search-city", userInput); 
 
 var key = "cda51abe369881d5a2a4986a8b0a39d0";
-var apiWeather = 'https://api.openweathermap.org/data/2.5/forecast?q='+userInput+',usa&units=imperial&appid='+key;
+
+currentWeather(userInput)
+var historyList = JSON.parse(localStorage.getItem("City-list")) || [];
+for (var i = 0; i < historyList.length; i++) {
+  list = $("<li>").text(historyList[i]);
+  $("#city-list").append(list);
+  };
 
 
 
+function currentWeather(searchCity) { 
+var apiWeather = 'https://api.openweathermap.org/data/2.5/forecast?q='+searchCity+',usa&units=imperial&appid='+key;
 fetch(apiWeather)
     .then(function (response) {
       return response.json();
     })
     .then(function (data) {
-      console.log(data)
+      
 
       $("#cityName").text(moment().format("dddd, MMMM Do"));
       $("#cityName").append(" "+data.city.name); 
@@ -31,12 +39,15 @@ fetch(apiWeather)
       return uVresponse.json();
     })
     .then(function (data) {
-      console.log(data[0].value);
+      
       $("#cityName").append("<br/><br/>" + "UV Index: "+data[0].value);
     });
  forcastWeather(laT, loN);
    
 });
+
+}
+
 
 function forcastWeather (laT, loN) {
 var daily = 'https://api.openweathermap.org/data/2.5/onecall?lat='+laT+'&lon='+loN+'&units=imperial&appid='+key;
@@ -50,7 +61,11 @@ var daily = 'https://api.openweathermap.org/data/2.5/onecall?lat='+laT+'&lon='+l
       var cardThree = $("#day-three");
       var cardFour = $("#day-four");
       var cardFive = $("#day-five");
-
+    cardOne.empty()
+    cardTwo.empty()
+    cardThree.empty()
+    cardFour.empty()
+    cardFive.empty()
 
   function timeConverter(UNIX_timestamp){
   var a = new Date(UNIX_timestamp * 1000);
@@ -62,13 +77,13 @@ var daily = 'https://api.openweathermap.org/data/2.5/onecall?lat='+laT+'&lon='+l
   return time;
 }
     if (dData.daily.length > 0) {
-      var getDailyIconOne = dData.daily[0].weather[0].icon;
+      var getDailyIconOne = dData.daily[1].weather[0].icon;
       var iconOne = "http://openweathermap.org/img/wn/"+getDailyIconOne+"@2x.png";
       var timeOne = $("<p>");
       var tempOne = $("<p>");
       timeOne.text(timeConverter(dData.daily[1].dt));
       cardOne.append(timeOne);
-      tempOne.text("Temp: " + dData.daily[0].temp.day + " F")
+      tempOne.text("Temp: " + dData.daily[1].temp.day + " F")
       cardOne.append('<img src=' + iconOne + '>');
       cardOne.append(tempOne);
       
@@ -111,24 +126,33 @@ var daily = 'https://api.openweathermap.org/data/2.5/onecall?lat='+laT+'&lon='+l
       tempFive.text("Temp: " + dData.daily[4].temp.day + " F")
       cardFive.append('<img src=' + iconFive + '>');
       cardFive.append(tempFive);
-      }
-       console.log(dData.daily);    
+      } 
     }
     );
-
-
-
 };
 
-$(".btn").on("click", function (event) {
-  event.preventDefault()
-  userInput = $(".form-control").val();
-  localStorage.setItem("Search-city", userInput);
 
+$(".btn").on("click", function (event) {
+  event.preventDefault();
+  userInput = $(".form-control").val().toUpperCase();
+  if (userInput !== "") {
+    localStorage.setItem("Search-city", userInput); 
+    
+    currentWeather(userInput);
+    // alemenat duplicat val
+    if (historyList.indexOf(userInput) === -1) {
+      list = $("<li>").text(userInput);
+      $("#city-list").append(list);
+      historyList.push(userInput);
+      localStorage.setItem("City-list", JSON.stringify(historyList));
+    }
+  };
+ 
   
-  list = $("<li>").text(userInput);
-  $("#city-list").append(list);
-  localStorage.setItem("City-list", list);
+  
+ 
+  
+  
   
    
 
