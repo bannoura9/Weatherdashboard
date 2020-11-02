@@ -77,11 +77,11 @@ var daily = 'https://api.openweathermap.org/data/2.5/onecall?lat='+laT+'&lon='+l
   return time;
 }
     if (dData.daily.length > 0) {
-      var getDailyIconOne = dData.daily[1].weather[0].icon;
+      var getDailyIconOne = dData.daily[2].weather[0].icon;
       var iconOne = "http://openweathermap.org/img/wn/"+getDailyIconOne+"@2x.png";
       var timeOne = $("<p>");
       var tempOne = $("<p>");
-      timeOne.text(timeConverter(dData.daily[1].dt));
+      timeOne.text(timeConverter(dData.daily[2].dt));
       cardOne.append(timeOne);
       tempOne.text("Temp: " + dData.daily[1].temp.day + " F")
       cardOne.append('<img src=' + iconOne + '>');
