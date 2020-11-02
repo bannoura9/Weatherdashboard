@@ -13,8 +13,7 @@ li {
   text-align: center;
 }
 .search-body {
-  text-align: center;
-
+  float: right;
 }
 .ml-4 {
   width: 200px;
@@ -26,12 +25,26 @@ li {
 .row2 {
   text-align: center;
 }
-@media (min-width: 1199.98px) {
+@media (min-width: 1200px) {
+  
+  #search-body {
+    margin-right: 0;
+
+    padding-right: 15px;
+  }
+  .form-inline {
+    margin-right: 0;
+    padding-right: 0;
+  }
+}
+
+
+@media (min-width: 1800px) {
   #main-body {
-    margin-right: 300px;
+    margin-right: 200px;
   }
   #search-body {
-   margin-right: 0;
+    margin-right: 0;
     padding-right: 15px;
   }
   .form-inline {
@@ -39,4 +52,8 @@ li {
     padding-right: 0;
   }
 
+}
+.uV {
+  color:white;
+  background: red;
 }

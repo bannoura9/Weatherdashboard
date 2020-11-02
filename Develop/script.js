@@ -40,7 +40,7 @@ fetch(apiWeather)
     })
     .then(function (data) {
       
-      $("#cityName").append("<br/><br/>" + "UV Index: "+data[0].value);
+      $("#cityName").append("<br/><br/>" + "<span>UV Index: </span><span class='uV'>" + data[0].value +"</span>");
     });
  forcastWeather(laT, loN);
    
@@ -87,37 +87,37 @@ var daily = 'https://api.openweathermap.org/data/2.5/onecall?lat='+laT+'&lon='+l
       cardOne.append('<img src=' + iconOne + '>');
       cardOne.append(tempOne);
       
-      var getDailyIconTwo = dData.daily[1].weather[0].icon;
+      var getDailyIconTwo = dData.daily[2].weather[0].icon;
       var iconTwo = "http://openweathermap.org/img/wn/"+getDailyIconTwo+"@2x.png";
       var timeTwo = $("<p>");
       var tempTwo = $("<p>");
-      timeTwo.text(timeConverter(dData.daily[1].dt));
+      timeTwo.text(timeConverter(dData.daily[2].dt));
       cardTwo.append(timeTwo);
-      tempTwo.text("Temp: " + dData.daily[1].temp.day + " F");
+      tempTwo.text("Temp: " + dData.daily[2].temp.day + " F");
       cardTwo.append('<img src=' + iconTwo + '>');
       cardTwo.append(tempTwo);
 
-      var getDailyIconThree = dData.daily[2].weather[0].icon;
+      var getDailyIconThree = dData.daily[3].weather[0].icon;
       var iconThree = "http://openweathermap.org/img/wn/"+getDailyIconThree+"@2x.png";
       var timeThree = $("<p>");
       var tempThree = $("<p>");
       timeThree.text(timeConverter(dData.daily[3].dt));
       cardThree.append(timeThree);
-      tempThree.text("Temp: " + dData.daily[2].temp.day + " F")
+      tempThree.text("Temp: " + dData.daily[3].temp.day + " F")
       cardThree.append('<img src=' + iconThree + '>');
       cardThree.append(tempThree);
 
-      var getDailyIconFour = dData.daily[3].weather[0].icon;
+      var getDailyIconFour = dData.daily[4].weather[0].icon;
       var iconFour = "http://openweathermap.org/img/wn/"+getDailyIconFour+"@2x.png";
       var timeFour = $("<p>");
       var tempFour = $("<p>");
       timeFour.text(timeConverter(dData.daily[4].dt));
       cardFour.append(timeFour);
-      tempFour.text("Temp: " + dData.daily[3].temp.day + " F")
+      tempFour.text("Temp: " + dData.daily[4].temp.day + " F")
       cardFour.append('<img src=' + iconFour+ '>');
       cardFour.append(tempFour);
 
-      var getDailyIconFive = dData.daily[4].weather[0].icon;
+      var getDailyIconFive = dData.daily[5].weather[0].icon;
       var iconFive = "http://openweathermap.org/img/wn/"+getDailyIconFive+"@2x.png";
       var timeFive = $("<p>");
       var tempFive = $("<p>");
