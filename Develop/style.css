@@ -51,20 +51,20 @@ li {
   }
 } */
 .noRisk {
-  color: white;
+  color: black;
   background: green;
 }
 .littleRisk {
-  color: white;
+  color: black;
   background: yellow;
 }
 .highRisk {
-  color: white;
+  color: black;
   background: orange;
 }
 
 .veryHighRisk {
-  color: white;
+  color: black;
   background: red;
 }
 
