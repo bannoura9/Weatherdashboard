@@ -36,20 +36,6 @@ li {
     padding-right: 0;
   }
 }
-
-/* @media (min-width: 1800px) {
-  #main-body {
-    margin-right: 200px;
-  }
-  #search-body {
-    margin-right: 0;
-    padding-right: 15px;
-  }
-  .form-inline {
-    margin-right: 0;
-    padding-right: 0;
-  }
-} */
 .noRisk {
   color: black;
   background: green;
