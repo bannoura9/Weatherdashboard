@@ -11,21 +11,24 @@
    <h1>Weather DashBoard</h1>
    <main class="container-fluid">
      <div class="row">
-      <section  id="search-body" class="container col-xs-6 col-sm-6 col-md-6 col-lg-4  col-xl-2 ">
+      <section  id="search-body" class="col-xs-12 col-sm-12 col-md-6 col-lg-4  col-xl-3 ">
          <h2 id="search">Search for a city</h2>
          <nav class="navbar navbar-light bg-light">
             <form class="form-inline">
-               <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+               <input class="form-control mr-sm-2" type="search" placeholder="Search" 
+               id="searchField"
+               aria-label="Search">
                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form>
          </nav>
          <h2>
-            <ul id="city-list">
+            <ul class="list-group" id="city-list">
                
             </ul>
          </h2>
       </section>
-      <section id="main-body" class="container col-xs-6 col-sm-6 col-md-6 col-lg-8 col-xl-7 ">
+
+      <section id="main-body" class="col-xs-12 col-sm-12 col-md-6 col-lg-8 col-xl-9 ">
             
             <div class="card bg-light ">
                <div class="card-body">
@@ -37,35 +40,40 @@
             <div id="cardMain" class="card container-fluid">
                <h2 id="five-days" >5-Days Forecast:</h2>
                <div class="row row2">
-                    <div class="card-body  col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-2 ml-4">
+
+                    <div class="card-body  col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-4 ml-4">
                   <div class="card text-white bg-primary mb-2" style="max-width: 18rem;">
                      <div class="card-body">
                         <p id="day-one" class="card-text"></p>
                      </div>
                   </div>
                     </div>
-                    <div class="card-body col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-2 ml-4">
+
+                    <div class="card-body col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-4 ml-4">
                   <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
                      <div class="card-body">
                         <p id="day-two" class="card-text"></p>
                      </div>
                   </div>
                      </div>
-                     <div class="card-body col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-2 ml-4">
+
+                     <div class="card-body col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-4 ml-4">
                   <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
                      <div class="card-body">
                         <p id="day-three" class="card-text"></p>
                      </div>
                   </div>
                      </div>
-                    <div class="card-body col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-2 ml-4">
+
+                    <div class="card-body col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-4 ml-4">
                   <div class="card text-white bg-primary mb-3 " style="max-width: 18rem;">
                      <div class="card-body">
                         <p id="day-four" class="card-text"></p>
                      </div>
                   </div>
                     </div>
-                    <div class="card-body col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-2 ml-4">
+
+                    <div class="card-body col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-4 ml-4">
                   <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
                      <div class="card-body">
                         <p id="day-five" class="card-text"></p>

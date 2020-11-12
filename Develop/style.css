@@ -26,7 +26,6 @@ li {
   text-align: center;
 }
 @media (min-width: 1200px) {
-  
   #search-body {
     margin-right: 0;
 
@@ -38,8 +37,7 @@ li {
   }
 }
 
-
-@media (min-width: 1800px) {
+/* @media (min-width: 1800px) {
   #main-body {
     margin-right: 200px;
   }
@@ -51,10 +49,30 @@ li {
     margin-right: 0;
     padding-right: 0;
   }
-
+} */
+.noRisk {
+  color: white;
+  background: green;
 }
-.uV {
-  color:white;
+.littleRisk {
+  color: white;
+  background: yellow;
+}
+.highRisk {
+  color: white;
+  background: orange;
+}
+
+.veryHighRisk {
+  color: white;
   background: red;
 }
 
+.extremeRisk {
+  color: white;
+  background: purple;
+}
+
+li.list-group-item {
+  cursor: pointer;
+}
